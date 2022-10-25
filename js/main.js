@@ -27,7 +27,7 @@ function addRemoveEvent() {
         // removeBookfunc(removeId);
         const allBooks = JSON.parse(localStorage.getItem('allBooks'));
         const filtered = allBooks.filter(
-          (book) => book.id !== Number(removeId)
+          (book) => book.id !== Number(removeId),
         );
         localStorage.setItem('allBooks', JSON.stringify(filtered));
         populateData();
