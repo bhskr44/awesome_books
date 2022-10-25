@@ -56,10 +56,14 @@ setTimeout(() => {
       removeBook(removeId);
     });
   });
-}, 1000);
+}, 500);
 
-function removeBook() {
-  // removeBOok
+function removeBook(removeId) {
+  // removeBOok  
+    let allBooks = JSON.parse(localStorage.getItem('allBooks'));
+    allBooks = allBooks.filter(allBooks !== removeId);
+    localStorage.setItem('allBooks', JSON.stringify(allBooks));
+    populateData();
 }
 
 // Path: js\main.js
