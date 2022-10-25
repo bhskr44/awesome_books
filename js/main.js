@@ -72,5 +72,3 @@ function addRemoveEvent() {
     });
   }, 300);
 }
-
-// Path: js\main.js
