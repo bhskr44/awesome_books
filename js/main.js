@@ -27,7 +27,7 @@ function addRemoveEvent() {
         // removeBookfunc(removeId);
         const allBooks = JSON.parse(localStorage.getItem('allBooks'));
         const filtered = allBooks.filter(
-          (book) => book.id !== Number(removeId),
+          (book) => book.id !== Number(removeId)
         );
         localStorage.setItem('allBooks', JSON.stringify(filtered));
         populateData();
@@ -37,8 +37,7 @@ function addRemoveEvent() {
   }, 300);
 }
 
-formElement.addEventListener('submit', (event) => {
-  event.preventDefault();
+function addBooks() {
   const titleElement = document.getElementById('title');
   const authorElement = document.getElementById('author');
 
@@ -53,6 +52,10 @@ formElement.addEventListener('submit', (event) => {
     author: authorElement.value,
   });
   localStorage.setItem('allBooks', JSON.stringify(allBooks));
+}
+formElement.addEventListener('submit', (event) => {
+  event.preventDefault();
+  addBooks();
   populateData();
   addRemoveEvent();
 });
