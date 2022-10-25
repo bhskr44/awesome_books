@@ -8,9 +8,9 @@ function populateData() {
   for (let i = 0; i < allBooks.length; i += 1) {
     list.innerHTML +=
       `<div class="book">
-    <span>"` +
+    <span>` +
       allBooks[i].title +
-      `" By ` +
+      ` <br/> ` +
       allBooks[i].author +
       `</span>
       <form action ="delete-book" class="remove-form" method="get">
@@ -22,6 +22,7 @@ function populateData() {
     </form>
       </div>`;
   }
+  addRemoveEvent();
 }
 
 formElement.addEventListener('submit', (event) => {
@@ -47,19 +48,29 @@ window.onload = () => {
   populateData();
 };
 
-setTimeout(() => {
-  const removeBook = document.querySelectorAll('.remove-form');
-  removeBook.forEach((book) => {
-    book.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const removeId = book.querySelector('.removeId').value;
-      removeBook(removeId);
-    });
-  });
-}, 1000);
+function removeBookfunc(id) {
+  // removeBook
+  console.log('remove book' + id);
+  let allBooks = JSON.parse(localStorage.getItem('allBooks'));
 
-function removeBook() {
-  // removeBOok
+  const filtered = allBooks.filter(function (book) {
+    return book.id != id;
+  });
+  localStorage.setItem('allBooks', JSON.stringify(filtered));
+  console.log(filtered);
+  populateData();
+}
+function addRemoveEvent() {
+  setTimeout(() => {
+    const removeBook = document.querySelectorAll('.remove-form');
+    removeBook.forEach((book) => {
+      book.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const removeId = book.querySelector('.removeId').value;
+        removeBookfunc(removeId);
+      });
+    });
+  }, 300);
 }
 
 // Path: js\main.js
