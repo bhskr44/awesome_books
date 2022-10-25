@@ -3,26 +3,38 @@ const list = document.getElementById('list');
 
 function populateData() {
   list.innerHTML = '';
-  let allBooks = JSON.parse(localStorage.getItem('allBooks'));
+  const allBooks = JSON.parse(localStorage.getItem('allBooks'));
 
   for (let i = 0; i < allBooks.length; i += 1) {
-    list.innerHTML +=
-      `<div class="book">
-    <span>` +
-      allBooks[i].title +
-      ` <br/> ` +
-      allBooks[i].author +
-      `</span>
+    list.innerHTML += `<div class="book">
+    <span>${allBooks[i].title} <br/> ${allBooks[i].author}</span>
       <form action ="delete-book" class="remove-form" method="get">
 
-    <input type="hidden" name="removeId" class="removeId" value="` +
-      allBooks[i].id +
-      `"></input>
+    <input type="hidden" name="removeId" class="removeId" value="${allBooks[i].id}"></input>
       <input type="submit" value="Remove"></input>
     </form>
       </div>`;
   }
-  addRemoveEvent();
+}
+
+function addRemoveEvent() {
+  setTimeout(() => {
+    const removeBook = document.querySelectorAll('.remove-form');
+    removeBook.forEach((book) => {
+      book.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const removeId = book.querySelector('.removeId').value;
+        // removeBookfunc(removeId);
+        const allBooks = JSON.parse(localStorage.getItem('allBooks'));
+        const filtered = allBooks.filter(
+          (book) => book.id !== Number(removeId),
+        );
+        localStorage.setItem('allBooks', JSON.stringify(filtered));
+        populateData();
+        addRemoveEvent();
+      });
+    });
+  }, 300);
 }
 
 formElement.addEventListener('submit', (event) => {
@@ -32,7 +44,7 @@ formElement.addEventListener('submit', (event) => {
 
   let allBooks = JSON.parse(localStorage.getItem('allBooks'));
   if (allBooks === null) {
-    allBooks = new Array();
+    allBooks = [];
   }
   //   console.log(allBooks);
   allBooks.push({
@@ -42,33 +54,10 @@ formElement.addEventListener('submit', (event) => {
   });
   localStorage.setItem('allBooks', JSON.stringify(allBooks));
   populateData();
+  addRemoveEvent();
 });
 
 window.onload = () => {
   populateData();
+  addRemoveEvent();
 };
-
-function removeBookfunc(id) {
-  // removeBook
-  console.log('remove book' + id);
-  let allBooks = JSON.parse(localStorage.getItem('allBooks'));
-
-  const filtered = allBooks.filter(function (book) {
-    return book.id != id;
-  });
-  localStorage.setItem('allBooks', JSON.stringify(filtered));
-  console.log(filtered);
-  populateData();
-}
-function addRemoveEvent() {
-  setTimeout(() => {
-    const removeBook = document.querySelectorAll('.remove-form');
-    removeBook.forEach((book) => {
-      book.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const removeId = book.querySelector('.removeId').value;
-        removeBookfunc(removeId);
-      });
-    });
-  }, 300);
-}
