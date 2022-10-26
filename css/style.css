@@ -4,16 +4,7 @@
   background-color: white;
   font-family: 'Montserrat';
 }
-<<<<<<< Updated upstream
 main{
-=======
-
-body {
-  height: 100%;
-}
-
-main {
->>>>>>> Stashed changes
   display: flex;
   flex-direction: column;
   align-items: center;
