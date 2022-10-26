@@ -9,22 +9,22 @@ class Books {
   }
 
   removeBook(id) {
-    let allBooks = JSON.parse(localStorage.getItem('allBooks'));
-    let filtered = allBooks.filter((book) => book.id !== Number(id));
-    localStorage.setItem('allBooks', JSON.stringify(filtered));
+    this.books = JSON.parse(localStorage.getItem('allBooks'));
+    this.books = this.books.filter((book) => book.id !== Number(id));
+    localStorage.setItem('allBooks', JSON.stringify(this.books));
   }
 
   saveBook(title, author) {
-    let allBooks = JSON.parse(localStorage.getItem('allBooks'));
-    if (allBooks === null) {
-      allBooks = [];
+    this.books = JSON.parse(localStorage.getItem('allBooks'));
+    if (this.books === null) {
+      this.books = [];
     }
-    allBooks.push({
+    this.books.push({
       id: Date.now(),
-      title: title,
-      author: author,
+      title,
+      author,
     });
-    localStorage.setItem('allBooks', JSON.stringify(allBooks));
+    localStorage.setItem('allBooks', JSON.stringify(this.books));
   }
 
   populateData() {
@@ -41,18 +41,11 @@ class Books {
     }
 
     for (let i = 0; i < allBooks.length; i += 1) {
-      list.innerHTML +=
-        `<div class="book">
-        <span>"` +
-        allBooks[i].title +
-        `" by ` +
-        allBooks[i].author +
-        `</span>
+      list.innerHTML += `<div class="book">
+        <span>"${allBooks[i].title}" by ${allBooks[i].author}</span>
           <form action ="delete-book" class="remove-form" method="get">
     
-        <input type="hidden" name="removeId" class="removeId" value="` +
-        allBooks[i].id +
-        `"></input>
+        <input type="hidden" name="removeId" class="removeId" value="${allBooks[i].id}"></input>
           <input type="submit" value="Remove"></input>
         </form>
           </div>`;
@@ -70,7 +63,7 @@ class Books {
   }
 }
 
-let bookObj = new Books();
+const bookObj = new Books();
 const formElement = document.getElementById('formElement');
 formElement.addEventListener('submit', (event) => {
   event.preventDefault();
