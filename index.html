@@ -5,30 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Awesome books</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <main>
-      <section class="header"><h1>Awesome Books</h1></section>
+      <section class="header"><h1>All Awesome Books</h1></section>
 
-      <section class="list" id="list">
-        <!-- <div class="book">
-            <span>"title" By author p
-              </span>
-              <form action ="dsdsd" id="removeform" method="get">
-            <input type="hidden" name="removeId" ></input>
-              <input type="submit" value="Remove"></input>
-              </form>
-          </div> -->
-      </section>
+      <section id="list"></section>
+      <div class="dash"></div>
 
       <section class="add-form">
         <form action="#" id="formElement" method="post">
-          <!-- <h2>Add New Book</h2> -->
+          <h2>Add New Book</h2>
           <input type="text" name="title" id="title" placeholder="Title" />
           <input type="text" name="author" id="author" placeholder="Author" />
-          <input type="submit" vlaue="Add" />
+          <div class="table-footer">
+            <input type="submit" value="Add" />
+          </div>
         </form>
       </section>
 
@@ -36,6 +36,6 @@
 
       <section class="copyright"></section>
     </main>
-    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/mainClass.js"></script>
   </body>
 </html>
