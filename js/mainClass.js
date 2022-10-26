@@ -91,14 +91,12 @@ setInterval(() => {
   date.innerHTML = new Date();
 }, 1000);
 
-const listSection = document.querySelector('#list-section');
+const listSection = document.querySelector('#list');
 const formSection = document.querySelector('#form-section');
 const contactSection = document.querySelector('#contact-section');
 const listBtn = document.querySelector('#menu-list');
 const addFormBtn = document.querySelector('#menu-addnew');
 const contactBtn = document.querySelector('#menu-contact');
-
-
 
 const toggleWindow = () => {
   listBtn.addEventListener('click', () => {
@@ -117,7 +115,6 @@ const toggleWindow = () => {
     listBtn.classList.remove('active');
     addFormBtn.classList.add('active');
     contactBtn.classList.remove('active');
-    
   });
 
   contactBtn.addEventListener('click', () => {
