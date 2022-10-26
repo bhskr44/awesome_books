@@ -4,6 +4,7 @@
   background-color: white;
   font-family: 'Montserrat';
 }
+
 main{
   display: flex;
   flex-direction: column;
@@ -14,8 +15,13 @@ main{
   height: 97vh;
 }
 
-.header {
+.header-section {
   width: 95%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
   font-size: 20px;
   text-align: center;
   display: flex;
@@ -46,13 +52,12 @@ main{
  .datentime {
   display: flex;
   justify-content: flex-end;
-  width: 90%;
   margin: 0;
   padding: 0;
  }
 
 .list-section {
-  width: 500px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,7 +69,14 @@ main{
 .list {
   margin-top: 4%;
   margin-bottom: 2%;
+  width: 95%;
+  height: 70vh;
+  overflow-y: scroll;
   border: 3px solid black;
+}
+
+.list::-webkit-scrollbar{
+  display: none;
 }
 
 .list .book {
@@ -107,8 +119,7 @@ main{
 }
 
 .add-form {
-  width: 30%;
-  margin-top: 2%;
+  width: 65%;
 }
 
 .add-form form {
@@ -119,16 +130,18 @@ main{
 }
 
 .add-form form input[type='text'] {
-  width: 95%;
-  margin: 5px 0;
+  width: 100%;
+  margin: 17px 0;
   padding: 0 10px;
-  height: 30px;
+  height: 45px;
 }
 
 .add-form form input[type='submit'] {
-  width: 70px;
-  height: 30px;
+  width: 100px;
+  height: 45px;
+  margin-right: -10px;
   float: right;
+  box-shadow: 3px 3px black;
 }
 
 .table-footer{
@@ -158,10 +171,15 @@ main{
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  width:60%
 }
 
 .contact h2 {
-  margin-bottom: 2%;
+  margin-bottom: 8%;
+}
+
+.contact p {
+  margin-bottom: 3%;
 }
 
 .show { 
