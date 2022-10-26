@@ -1,4 +1,96 @@
 * {
   margin: 0;
   padding: 0;
+  background-color: white;
+  font-family: 'Montserrat';
 }
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3%;
+}
+
+.header {
+  font-size: 20px;
+  text-align: center;
+}
+
+.list {
+  margin-top: 4%;
+  margin-bottom: 2%;
+  width: 40%;
+  border: 3px solid black;
+}
+
+.list .book {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list .book span {
+  font-size: 16px;
+  font-weight: bold;
+  background: transparent;
+}
+
+.list .book:nth-child(2n){
+  background-color: #f2f2f2;
+}
+
+.remove-form input[type='submit'] {
+  background-color: white;
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border: 1px solid black;
+  box-shadow: 3px 3px black;
+  border-radius: 8px;
+}
+
+.dash {
+  border-bottom: 3px solid black;
+  width: 5%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  border-radius: 50px;
+}
+
+.add-form {
+  width: 30%;
+  margin-top: 2%;
+}
+
+.add-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3%;
+}
+
+.add-form form input[type='text'] {
+  width: 95%;
+  margin: 5px 0;
+  padding: 0 10px;
+  height: 30px;
+}
+
+.add-form form input[type='submit'] {
+  width: 70px;
+  height: 30px;
+  float: right;
+}
+
+.table-footer{
+  width: 100%;
+}
+
+
+
+
