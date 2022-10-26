@@ -2,9 +2,10 @@
   margin: 0;
   padding: 0;
   background-color: white;
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
 }
-main{
+
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,7 +38,7 @@ main{
   background: transparent;
 }
 
-.list .book:nth-child(2n){
+.list .book:nth-child(2n) {
   background-color: #f2f2f2;
 }
 
@@ -47,7 +48,6 @@ main{
   font-weight: bold;
   color: black;
   padding: 10px 20px;
-  border: none;
   cursor: pointer;
   border: 1px solid black;
   box-shadow: 3px 3px black;
@@ -87,10 +87,6 @@ main{
   float: right;
 }
 
-.table-footer{
+.table-footer {
   width: 100%;
 }
-
-
-
-
