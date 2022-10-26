@@ -16,12 +16,23 @@
   </head>
   <body>
     <main>
-      <section class="header"><h1>All Awesome Books</h1></section>
+      <nav class="header-section">
+        <section class="header">
+          <h1>Awesome Books</h1>
+          <div class="menu">
+            <ul>
+              <li class="active" id="menu-list">List</li>
+              <li id="menu-addnew">Add New</li>
+              <li id="menu-contact">Contact</li>
+            </ul>
+          </div>
+        </section>
+        <div class="datentime"><p class="date"></p></div>
+      </nav>
 
       <section id="list"></section>
-      <div class="dash"></div>
 
-      <section class="add-form">
+      <section class="add-form hide" id="form-section">
         <form action="#" id="formElement" method="post">
           <h2>Add New Book</h2>
           <input type="text" name="title" id="title" placeholder="Title" />
@@ -32,9 +43,22 @@
         </form>
       </section>
 
-      <section class="conatct"></section>
+      <section id="contact-section" class="contact hide">
+        <h2>Add New Book</h2>
+        <p>
+          Do have any questions or you just want to soy "Hello"? You con reach
+          out to us!
+        </p>
+        <ul>
+          <li>Our Email: mail@mail.com</li>
+          <li>Our Phone number: +919999999999</li>
+          <li>Our address: Streetname 22, 84503 City, Country</li>
+        </ul>
+      </section>
 
-      <section class="copyright"></section>
+      <section class="copyright">
+        <h4>Copyright ...</h4>
+      </section>
     </main>
     <script type="text/javascript" src="./js/mainClass.js"></script>
   </body>
