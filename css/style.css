@@ -24,6 +24,7 @@ main{
   border: 3px solid black;
   align-items: center;
   padding: 10px;
+  cursor: hover;
 }
 
 .header .menu ul {
@@ -50,11 +51,19 @@ main{
   padding: 0;
  }
 
+.list-section {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid black;
+  padding: 10px;
+  
+}
 
 .list {
   margin-top: 4%;
   margin-bottom: 2%;
-  width: 40%;
   border: 3px solid black;
 }
 
@@ -140,7 +149,7 @@ main{
 }
 
 .active {
-  color: black !important;
+  color: blue !important;
   font-weight: 600;
 }
 
@@ -153,4 +162,12 @@ main{
 
 .contact h2 {
   margin-bottom: 2%;
+}
+
+.show { 
+  display: flex;
+}
+
+.hide {
+  display: none;
 }
