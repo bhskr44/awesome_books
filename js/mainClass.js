@@ -7,10 +7,23 @@ class Books {
       ? JSON.parse(localStorage.getItem('allBooks'))
       : [];
   }
-
+​
   removeBook(id) {
     const allBooks = JSON.parse(localStorage.getItem('allBooks'));
     this.books = allBooks.filter((book) => book.id !== Number(id));
+    localStorage.setItem('allBooks', JSON.stringify(this.books));
+  }
+​
+  saveBook(title, author) {
+    // this.allBooks = JSON.parse(localStorage.getItem('allBooks'));
+    if (this.books === null) {
+      this.books = [];
+    }
+    this.books.push({
+      id: Date.now(),
+      title,
+      author,
+    });
     localStorage.setItem('allBooks', JSON.stringify(this.books));
   }
 
