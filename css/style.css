@@ -4,17 +4,52 @@
   background-color: white;
   font-family: 'Montserrat';
 }
+<<<<<<< Updated upstream
 main{
+=======
+
+body {
+  height: 100%;
+}
+
+main {
+>>>>>>> Stashed changes
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 3%;
+  margin-top: 1%;
+  height: 100%;
+  justify-content: space-between;
 }
 
 .header {
+  width: 95%;
   font-size: 20px;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 3px solid black;
+  align-items: center;
+  padding: 10px;
 }
+
+.header .menu ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.header .menu ul li {
+ padding: 0 15px;
+ border-left: 1px solid black;
+ color: grey;
+}
+
+.header .menu ul li:first-child {
+  border-left: 0;
+ }
+
 
 .list {
   margin-top: 4%;
@@ -91,6 +126,26 @@ main{
   width: 100%;
 }
 
+<<<<<<< Updated upstream
 
 
 
+=======
+.copyright{
+  bottom: 5px;
+
+  height: 50px;
+  color: black;
+  border: 3px solid black;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+}
+
+.active {
+  color: black !important;
+  font-weight: 600;
+}
+>>>>>>> Stashed changes
